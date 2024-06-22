@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- meta tags for character set and viewport settings -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Link to external CSS stylesheet -->
     <link rel="stylesheet" href="style.css" />
     <title>Document</title>
   </head>
   <body>
+    <!-- Main heading of the webpage -->
     <header><h1>Booking System</h1></header>
     <section></section>
     <div id="booking-system">
-      <div id="desk-grid"></div>
+      <!-- Container for the desk grid where desks will be dynamically generated -->
+      <div id="desk-grid">
+        <!-- desks will be gotten by javascript -->
+      </div>
       <div id="booking-form">
         <h2>Book a Desk</h2>
         <form id="form">
+          <!-- dropdown for choosing desk type -->
           <label for="desk-type">Desk Type:</label>
           <select id="desk-type" required>
             <option value="individual">Individual</option>
