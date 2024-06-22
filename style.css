@@ -1,0 +1,38 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+/* #booking-system {
+  display: flex;
+} */
+
+#desk-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-gap: 10px;
+  margin-right: 20px;
+}
+
+.desk {
+  width: 100px;
+  height: 100px;
+  border: 1px solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.booked {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+#booking-form {
+  max-width: 300px;
+}
+
+#dashboard {
+  margin-top: 20px;
+}
