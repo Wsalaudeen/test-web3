@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header><h1>Booking System</h1></header>
+    <section></section>
+    <div id="booking-id">
+      <div id="grid"></div>
+      <div id="booking-form">
+        <h2>Book a Desk</h2>
+        <form id="form">
+          <label for="desk-type">Desk Type:</label>
+          <select id="desk-type" required>
+            <option value="individual">Individual</option>
+            <option value="team">Team</option>
+          </select>
+          <div id="membership-container">
+            <label for="membership-tier">Membership Tier:</label>
+            <select id="membership-tier" required>
+              <option value="basic">Basic</option>
+              <option value="premium">Premium</option>
+              <option value="executive">Executive</option>
+            </select>
+          </div>
+          <label for="hours">Hours:</label>
+          <input type="number" id="hours" min="1" required />
+          <button type="submit">Book Desk</button>
+        </form>
+        <p id="total-charge"></p>
+      </div>
+    </div>
+    <h2>Revenue Dashboard</h2>
+    <div id="dashboard">
+      <p>Total Revenue: $<span id="total-revenue">0</span></p>
+      <p>Basic: $<span id="basic-revenue">0</span></p>
+      <p>Premium: $<span id="premium-revenue">0</span></p>
+      <p>Executive: $<span id="executive-revenue">0</span></p>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
