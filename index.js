@@ -1,11 +1,15 @@
+// Initialize an array to keep track of all desks
 const desks = [];
 
+// Initialize an object to track revenue for different membership tiers and total revenue
 const revenues = {
   total: 0,
   basic: 0,
   premium: 0,
   executive: 0,
 };
+
+// Get references to various DOM elements that will be manipulated
 
 const deskGrid = document.getElementById("desk-grid");
 const formEl = document.getElementById("form");
@@ -15,16 +19,17 @@ const basicRevenue = document.getElementById("basic-revenue");
 const premiumRevenue = document.getElementById("premium-revenue");
 const executiveRevenue = document.getElementById("executive-revenue");
 
+// Loop to create and initialize 15 desk elements
 for (let i = 0; i < 15; i++) {
   const desk = document.createElement("div");
   desk.classList.add("desk");
-  desk.dataset.index = i;
-  desk.dataset.type = i < 10 ? "individual" : "team";
-  desk.innerText = i < 10 ? `${i + 1}` : `${i - 9}`;
-  desk.addEventListener("click", handleClick);
-  deskGrid.appendChild(desk);
+  desk.dataset.index = i; // setting th index of the desk
+  desk.dataset.type = i < 10 ? "individual" : "team"; // setting the type based on the index
+  desk.innerText = i < 10 ? `${i + 1}` : `${i - 9}`; //the desk label
+  desk.addEventListener("click", handleClick); // adding a click for event listener
+  deskGrid.appendChild(desk); // appending the desk to the grid
   desks.push({
-    element: desk,
+    element: desk, // Reference to the desk element
     booked: false,
     type: desk.dataset.type,
   });
@@ -45,8 +50,10 @@ function handleClick(event) {
   document.getElementById("desk-type").disabled = true;
 }
 
+// Function to handle form submissions
+
 function handleFormSubmit(event) {
-  event.preventDefault();
+  event.preventDefault(); // Prevent default form submission
   const deskType = document.getElementById("desk-type").value;
   const membershipTier = document.getElementById("membership-tier").value;
   const hours = parseInt(document.getElementById("hours").value, 10);
@@ -79,6 +86,7 @@ function handleFormSubmit(event) {
 
   let total = hours * rate;
   if (hours > 3) {
+    // Apply a 10% discount if booking for more than 3 hours
     total *= 0.9;
   }
 
@@ -87,6 +95,7 @@ function handleFormSubmit(event) {
   updateDashboard();
 }
 
+// Function to update the revenue dashboard
 function updateDashboard() {
   totalRevenue.innerText = revenues.total.toFixed(2);
   basicRevenue.innerText = revenues.basic.toFixed(2);
